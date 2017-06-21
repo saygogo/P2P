@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.dontworry.p2p.MyApplcattion.AppManager;
 import com.example.dontworry.p2p.R;
 
 import butterknife.Bind;
@@ -98,5 +99,11 @@ public class SplashActivity extends AppCompatActivity {
 
 
         return "3";
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        AppManager.getInstance().removeActivity(this);
     }
 }
