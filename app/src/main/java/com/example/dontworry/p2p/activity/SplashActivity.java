@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.dontworry.p2p.MyApplcattion.AppManager;
 import com.example.dontworry.p2p.R;
+import com.example.dontworry.p2p.utils.UIUtils;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -82,7 +83,9 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        splashTvVersion.setText(getVersionCode());
+        splashTvVersion.setText(
+                UIUtils.stringFormat(splashTvVersion.getText().toString(), getVersionCode())
+        );
     }
 
     private String getVersionCode() {
